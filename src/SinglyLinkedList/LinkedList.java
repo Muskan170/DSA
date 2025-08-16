@@ -1,3 +1,4 @@
+package SinglyLinkedList;
 class Node {
     int data; // the data value
     Node next; // the reference to the next Node in the linked list

@@ -1,3 +1,4 @@
+package SinglyLinkedList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,31 +16,27 @@ class Node {
         this.next = null;
     }
 }
-public class InsertNodeAtHead {
-    public static void printList(Node head) {
+
+public class LengthOfLinkedList {
+    public static int lengthOfList(Node head) {
+        int cnt = 0;
         while (head != null) {
-            System.out.print(head.data + " ");
+            cnt++;
             head = head.next;
         }
-    }
-
-    public static Node insertNodeAtHead(int val, Node head) {
-        Node tmp = new Node(val);
-        tmp.next = head;
-        return tmp;
+        return cnt;
     }
 
     public static void main(String[] args) {
         List<Integer> arr = Arrays.asList(12, 8, 5, 7);
-        int val = 100;
 
         Node head = new Node(arr.get(0));
         head.next = new Node(arr.get(1));
         head.next.next = new Node(arr.get(2));
         head.next.next.next = new Node(arr.get(3));
 
-        head = insertNodeAtHead(val, head);
+        int res = lengthOfList(head);
 
-        printList(head);
+        System.out.println(res);
     }
 }
